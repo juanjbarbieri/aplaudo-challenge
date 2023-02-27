@@ -1,0 +1,38 @@
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            <lightning-icon icon-name="standard:record" size="small"></lightning-icon>
+             Create Expense
+        </h3>
+        <div slot="footer">
+            <lightning-button label="Create Expense" onclick={handleClick} variant="brand"></lightning-button>
+        </div>
+        <p class="slds-p-horizontal_small">
+            <lightning-input type="text" label="Tittle" value={expenseObject.tittle__c} onchange={handleTittleChange}></lightning-input>
+        </p>
+        <!-- <lightning-input type="text" label="Category" value={expenseObject.Categoty} onchange={handleCategoryChange}></lightning-input> -->
+        <div class="slds-box">
+            <template if:true={expenseCategoryValues.data}>
+                <lightning-combobox name="category" label="Category" value={value}
+                    options={expenseCategoryValues.data.values} onchange={handleCategoryChange}>
+                </lightning-combobox>
+            </template>
+        </div>
+        <div class="slds-grid">
+            <p class="slds-col slds-p-horizontal_small">
+                <lightning-input type="Date" label="Date" value={expenseObject.Expense_Date} onchange={handleDateChange}></lightning-input>
+            </p>
+                
+            <p class="slds-col slds-p-horizontal_small">
+                <lightning-input type="Currency" label="Amount" value={expenseObject.Amount} onchange={handleAmountChange}></lightning-input>
+            </p>
+        </div>
+        <p class="slds-p-horizontal_small">
+            <lightning-input type="Checkbox" label="Weekly" checked={expenseObject.Weekly__c} onchange={handleWeeklyChange}></lightning-input>
+        </p>
+        <p class="slds-p-horizontal_small">
+            <lightning-input type="Checkbox" label="Montly" checked={expenseObject.Monthly__c} onchange={handleMonthlyChange}></lightning-input>
+        </p>
+</lightning-card>
+
+</template>

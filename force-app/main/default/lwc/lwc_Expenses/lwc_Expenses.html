@@ -1,0 +1,11 @@
+<template>
+    <lightning-tabset variant="scoped" active-tab-value ="">
+        <lightning-tab label="expense Creator" value="expense Creator" onactive={handelTabChange}>
+            <c-lwc_-expense-creator></c-lwc_-expense-creator>
+        </lightning-tab>
+        <lightning-tab label="expense List" value="expense List" onactive={handelTabChange}>
+            <c-lwc_-expense-list></c-lwc_-expense-list>
+        </lightning-tab>
+    </lightning-tabset>
+    <!-- <lightning-button onclick={handleClick} label="Click Me"></lightning-button> -->
+</template>

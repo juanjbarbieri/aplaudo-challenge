@@ -1,0 +1,34 @@
+<template>
+    <div class="slds-p-around_xx-small search-box" if:false={isLoading}>
+        <lightning-input
+          name="search"
+          label="Search"
+          placeholder="Search Expense"
+          variant="label-hidden"
+          type="search"
+          onchange={search}
+        ></lightning-input>
+    </div>
+    
+    <lightning-card>
+        <template if:true={expenseItems}>
+            <div>
+                <lightning-datatable 
+                data={expenseItems} 
+                columns={columns} 
+                key-field="Id"
+                default-sort-direction={defaultSortDirection}
+                sorted-direction={sortDirection}
+                sorted-by={sortedBy}
+                hide-checkbox-column="true"
+                onsort={onHandleSort}>
+                </lightning-datatable>
+            </div>
+        </template>
+    </lightning-card>    
+    <div class="spinnerHolder" if:true={isLoading}>
+        <lightning-spinner 
+            alternative-text="Loading...">
+        </lightning-spinner>
+    </div>
+</template>

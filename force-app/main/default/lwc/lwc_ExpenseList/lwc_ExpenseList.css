@@ -1,0 +1,40 @@
+.search-box {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: white;
+    box-shadow: 0 0 var(--lwc-spacingMedium, 1rem) var(--lwc-spacingMedium, 1rem)
+      white;
+  }
+  
+  .capitalize {
+    text-transform: capitalize;
+  }
+  
+  .spinnerHolder {
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+  }
+  
+  .spinnerButtonHolder {
+    position: relative;
+    display: block;
+  }
+  
+  .spinnerButtonHolder lightning-spinner {
+    display: none;
+  }
+  
+  .spinnerButtonHolder lightning-button-icon-stateful[data-processing="true"] {
+    opacity: 0;
+  }
+  
+  .spinnerButtonHolder
+    lightning-button-icon-stateful[data-processing="true"]
+    + lightning-spinner {
+    display: block;
+  }
+  
